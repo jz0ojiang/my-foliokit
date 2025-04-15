@@ -71,8 +71,12 @@ def generate_corpus(markdown_dir, output_dir, lang):
     print(f"共处理 {len(corpus_data)} 个文档")
 
 if __name__ == "__main__":
+    # 获取当前脚本所在目录的父目录
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    project_root = os.path.dirname(script_dir)
+    
     langs = ['en', 'zh']  # 支持的语言
     for lang in langs:
-        markdown_dir = f"../content/{lang}"  # 替换为实际路径
-        output_dir = "../api/output/corpus"  # 生成的语料库文件保存路径
+        markdown_dir = os.path.join(project_root, "content", lang)  # 使用绝对路径
+        output_dir = os.path.join(project_root, "api", "output", "corpus")  # 使用绝对路径
         generate_corpus(markdown_dir, output_dir, lang)
