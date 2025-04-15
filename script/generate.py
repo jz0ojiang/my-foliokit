@@ -2,13 +2,8 @@ import os
 import json
 import yaml
 import markdown
-import re
 from pathlib import Path
-from dotenv import load_dotenv
 from datetime import date, datetime
-
-# 加载环境变量
-load_dotenv()
 
 class CustomJSONEncoder(json.JSONEncoder):
     def default(self, obj):
