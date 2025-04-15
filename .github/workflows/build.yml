@@ -1,0 +1,38 @@
+name: Build Content
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: Install dependencies
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Build Content
+        run: |
+          python script/generate.py
+      
+      - name: commit corpus
+        run: |
+          git diff
+          git config --global user.email "actions@users.noreply.github.com"
+          git config --global user.name "github-actions"
+          git add -A
+          git commit -m "update corpus" || exit 0
+          git push
