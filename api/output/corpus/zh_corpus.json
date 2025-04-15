@@ -1,0 +1,138 @@
+[
+    {
+        "title": "mobile-app",
+        "meta": {
+            "title": "移动应用开发",
+            "date": "2024-04-12",
+            "description": "跨平台移动应用开发项目",
+            "endDate": "present",
+            "cover": "/images/mobile-app.png",
+            "tags": [
+                "移动开发",
+                "React Native",
+                "TypeScript",
+                "跨平台"
+            ],
+            "link": "https://github.com/yourusername/mobile-app",
+            "top": true,
+            "draft": false,
+            "weight": 3,
+            "ai": false,
+            "abbrlink": "mobile-app"
+        },
+        "content": "<h1>健康追踪移动应用</h1>\n<h2>项目概述</h2>\n<p>这是一个使用 React Native 开发的健康追踪移动应用，帮助用户记录和追踪日常健康数据，包括运动、饮食和睡眠等。</p>\n<h2>技术栈</h2>\n<ul>\n<li><strong>框架</strong>: React Native</li>\n<li><strong>语言</strong>: TypeScript</li>\n<li><strong>后端</strong>: Firebase</li>\n<li><strong>状态管理</strong>: Redux Toolkit</li>\n<li><strong>UI 组件</strong>: React Native Paper</li>\n<li><strong>图表</strong>: Victory Native</li>\n</ul>\n<h2>主要功能</h2>\n<ul>\n<li>用户健康数据记录</li>\n<li>运动追踪和统计</li>\n<li>饮食记录和营养分析</li>\n<li>睡眠质量监测</li>\n<li>健康目标设定</li>\n<li>数据可视化</li>\n</ul>\n<h2>项目亮点</h2>\n<ul>\n<li>使用 TypeScript 确保代码质量</li>\n<li>实现离线数据同步</li>\n<li>集成健康数据 API</li>\n<li>使用 Firebase 实现实时数据更新</li>\n<li>响应式设计适配不同设备</li>\n</ul>\n<h2>项目链接</h2>\n<ul>\n<li><a href=\"https://github.com/yourusername/health-tracker\">GitHub 仓库</a></li>\n<li><a href=\"https://apps.apple.com/app/health-tracker\">App Store 链接</a></li>\n<li><a href=\"https://play.google.com/store/apps/details?id=com.healthtracker\">Google Play 链接</a></li>\n</ul>"
+    },
+    {
+        "title": "ecommerce-platform",
+        "meta": {
+            "title": "电子商务平台",
+            "date": "2024-04-12",
+            "tags": [
+                "全栈开发",
+                "Node.js",
+                "React",
+                "MongoDB"
+            ],
+            "description": "基于 MERN 技术栈的现代化电子商务平台"
+        },
+        "content": "<h1>电子商务平台</h1>\n<h2>项目概述</h2>\n<p>这是一个完整的电子商务平台，使用 MERN (MongoDB, Express, React, Node.js) 技术栈构建。平台支持商品展示、购物车、支付系统等完整电商功能。</p>\n<h2>技术栈</h2>\n<ul>\n<li><strong>后端</strong>: Node.js, Express</li>\n<li><strong>数据库</strong>: MongoDB</li>\n<li><strong>前端</strong>: React, Redux</li>\n<li><strong>支付</strong>: Stripe API</li>\n<li><strong>部署</strong>: AWS</li>\n</ul>\n<h2>主要功能</h2>\n<ul>\n<li>用户认证和授权</li>\n<li>商品分类和搜索</li>\n<li>购物车管理</li>\n<li>订单处理</li>\n<li>支付集成</li>\n<li>管理员面板</li>\n</ul>\n<h2>项目亮点</h2>\n<ul>\n<li>使用 JWT 实现安全的用户认证</li>\n<li>集成 Stripe 支付系统</li>\n<li>实现实时库存管理</li>\n<li>响应式设计适配移动端</li>\n<li>使用 Redux 管理复杂状态</li>\n</ul>\n<h2>项目链接</h2>\n<ul>\n<li><a href=\"https://github.com/yourusername/ecommerce-platform\">GitHub 仓库</a></li>\n<li><a href=\"https://ecommerce-demo.vercel.app\">在线演示</a></li>\n</ul>"
+    },
+    {
+        "title": "blog-system",
+        "meta": {
+            "title": "现代化博客系统",
+            "date": "2024-04-12",
+            "tags": [
+                "Web开发",
+                "Python",
+                "Django",
+                "Vue.js"
+            ],
+            "description": "使用 Django 和 Vue.js 构建的现代化博客系统"
+        },
+        "content": "<h1>现代化博客系统</h1>\n<h2>项目概述</h2>\n<p>这是一个功能完整的博客系统，使用 Django 作为后端，Vue.js 作为前端。系统支持文章发布、评论、标签分类等博客核心功能。</p>\n<h2>技术栈</h2>\n<ul>\n<li><strong>后端</strong>: Django, Django REST framework</li>\n<li><strong>前端</strong>: Vue.js 3, Vuex</li>\n<li><strong>数据库</strong>: PostgreSQL</li>\n<li><strong>部署</strong>: Docker, Nginx</li>\n<li><strong>其他</strong>: Redis (缓存)</li>\n</ul>\n<h2>主要功能</h2>\n<ul>\n<li>文章发布和管理</li>\n<li>评论系统</li>\n<li>标签和分类</li>\n<li>用户认证</li>\n<li>文章搜索</li>\n<li>富文本编辑器</li>\n</ul>\n<h2>项目亮点</h2>\n<ul>\n<li>使用 Django REST framework 构建 RESTful API</li>\n<li>实现 JWT 认证</li>\n<li>集成 Markdown 编辑器</li>\n<li>使用 Redis 缓存提高性能</li>\n<li>支持文章草稿和定时发布</li>\n</ul>\n<h2>项目链接</h2>\n<ul>\n<li><a href=\"https://github.com/yourusername/blog-system\">GitHub 仓库</a></li>\n<li><a href=\"https://blog-demo.vercel.app\">在线演示</a></li>\n</ul>"
+    },
+    {
+        "title": "data-analysis",
+        "meta": {
+            "title": "数据分析平台",
+            "date": "2024-04-12",
+            "tags": [
+                "数据分析",
+                "Python",
+                "机器学习",
+                "数据可视化"
+            ],
+            "description": "基于 Python 的数据分析和可视化平台"
+        },
+        "content": "<h1>数据分析平台</h1>\n<h2>项目概述</h2>\n<p>这是一个综合性的数据分析平台，使用 Python 生态系统构建。平台支持数据清洗、分析、可视化和机器学习模型训练。</p>\n<h2>技术栈</h2>\n<ul>\n<li><strong>数据处理</strong>: Pandas, NumPy</li>\n<li><strong>可视化</strong>: Matplotlib, Seaborn, Plotly</li>\n<li><strong>机器学习</strong>: Scikit-learn, TensorFlow</li>\n<li><strong>Web 框架</strong>: Flask</li>\n<li><strong>数据库</strong>: PostgreSQL</li>\n<li><strong>部署</strong>: Docker</li>\n</ul>\n<h2>主要功能</h2>\n<ul>\n<li>数据导入和清洗</li>\n<li>探索性数据分析</li>\n<li>交互式数据可视化</li>\n<li>机器学习模型训练</li>\n<li>模型部署和预测</li>\n<li>数据报告生成</li>\n</ul>\n<h2>项目亮点</h2>\n<ul>\n<li>使用 Jupyter Notebook 进行交互式分析</li>\n<li>实现自动化数据清洗流程</li>\n<li>构建交互式数据仪表板</li>\n<li>集成多种机器学习算法</li>\n<li>支持模型版本控制</li>\n</ul>\n<h2>项目链接</h2>\n<ul>\n<li><a href=\"https://github.com/yourusername/data-analysis\">GitHub 仓库</a></li>\n<li><a href=\"https://data-analysis-demo.vercel.app\">在线演示</a></li>\n</ul>"
+    },
+    {
+        "title": "personal-website",
+        "meta": {
+            "title": "个人作品集网站",
+            "date": "2024-04-12",
+            "description": "使用现代技术栈构建的响应式个人作品集网站",
+            "endDate": "present",
+            "cover": "/images/personal-website.png",
+            "tags": [
+                "Web开发",
+                "React",
+                "Next.js",
+                "TailwindCSS"
+            ],
+            "link": "https://github.com/yourusername/personal-website",
+            "top": true,
+            "draft": false,
+            "weight": 1,
+            "ai": false,
+            "abbrlink": "personal-website"
+        },
+        "content": "<h1>个人作品集网站</h1>\n<h2>项目概述</h2>\n<p>这是一个使用 Next.js 和 TailwindCSS 构建的现代化个人作品集网站。网站展示了我的专业技能、项目经验和联系方式。</p>\n<h2>技术栈</h2>\n<ul>\n<li><strong>前端框架</strong>: Next.js 14</li>\n<li><strong>样式</strong>: TailwindCSS</li>\n<li><strong>部署</strong>: Vercel</li>\n<li><strong>其他工具</strong>: Framer Motion (动画效果)</li>\n</ul>\n<h2>主要功能</h2>\n<ul>\n<li>响应式设计，适配各种设备</li>\n<li>暗色/亮色主题切换</li>\n<li>项目展示画廊</li>\n<li>技能时间线</li>\n<li>联系表单</li>\n</ul>\n<h2>项目亮点</h2>\n<ul>\n<li>使用 Next.js 的 App Router 实现现代化路由</li>\n<li>集成 TailwindCSS 实现快速样式开发</li>\n<li>使用 Framer Motion 添加流畅的动画效果</li>\n<li>优化 SEO 和性能</li>\n</ul>\n<h2>项目链接</h2>\n<ul>\n<li><a href=\"https://github.com/yourusername/personal-website\">GitHub 仓库</a></li>\n<li><a href=\"https://your-website.vercel.app\">在线演示</a></li>\n</ul>"
+    },
+    {
+        "title": "ai-assistant",
+        "meta": {
+            "title": "AI 助手应用",
+            "date": "2024-04-12",
+            "description": "基于大型语言模型的智能对话助手",
+            "endDate": "present",
+            "cover": "/images/ai-assistant.png",
+            "tags": [
+                "AI",
+                "机器学习",
+                "Python",
+                "自然语言处理",
+                "重要#FFA500"
+            ],
+            "link": "https://github.com/yourusername/ai-assistant",
+            "top": true,
+            "draft": false,
+            "weight": 2,
+            "ai": true
+        },
+        "content": "<h2>项目概述</h2>\n<p>这是一个基于大型语言模型的智能对话助手应用，能够理解自然语言并生成有意义的回复。项目集成了最新的 AI 技术，提供了流畅的对话体验。</p>\n<h2>技术栈</h2>\n<ul>\n<li><strong>后端</strong>: Python, FastAPI</li>\n<li><strong>AI 模型</strong>: GPT-4, LangChain</li>\n<li><strong>数据库</strong>: PostgreSQL</li>\n<li><strong>部署</strong>: Docker, Kubernetes</li>\n<li><strong>其他工具</strong>: Redis (缓存), Celery (任务队列)</li>\n</ul>\n<h2>主要功能</h2>\n<ul>\n<li>自然语言对话</li>\n<li>上下文理解</li>\n<li>多轮对话支持</li>\n<li>知识库集成</li>\n<li>实时响应</li>\n<li>用户反馈系统</li>\n</ul>\n<h2>项目亮点</h2>\n<ul>\n<li>使用 LangChain 框架实现复杂的对话流程</li>\n<li>集成向量数据库实现知识检索</li>\n<li>实现流式响应提升用户体验</li>\n<li>使用 Redis 缓存优化性能</li>\n<li>支持多语言对话</li>\n</ul>\n<h2>项目成果</h2>\n<ul>\n<li>成功部署到生产环境</li>\n<li>日活跃用户超过 1000</li>\n<li>平均响应时间 &lt; 1 秒</li>\n<li>用户满意度 &gt; 95%</li>\n</ul>"
+    },
+    {
+        "title": "portfolio",
+        "meta": {
+            "title": "个人作品集",
+            "date": "2024-04-12",
+            "description": "个人作品集网站开发",
+            "endDate": "present",
+            "cover": "/images/portfolio.png",
+            "tags": [
+                "前端开发",
+                "Vue.js",
+                "响应式设计"
+            ],
+            "link": "https://github.com/yourusername/portfolio",
+            "top": true,
+            "draft": false,
+            "weight": 4,
+            "ai": false,
+            "abbrlink": "portfolio"
+        },
+        "content": "<h2>项目概述</h2>\n<p>个人作品集网站是一个展示个人技能和项目的平台，使用 Vue.js 开发，具有响应式设计，适配各种设备。</p>\n<h2>技术栈</h2>\n<ul>\n<li>Vue.js</li>\n<li>Vuex</li>\n<li>Vue Router</li>\n<li>SCSS</li>\n<li>Responsive Design</li>\n</ul>\n<h2>主要功能</h2>\n<ul>\n<li>项目展示</li>\n<li>技能介绍</li>\n<li>联系方式</li>\n<li>响应式布局</li>\n</ul>\n<h2>项目亮点</h2>\n<ul>\n<li>现代化的 UI 设计</li>\n<li>流畅的用户体验</li>\n<li>良好的性能优化</li>\n<li>完善的 SEO 支持</li>\n</ul>\n<h2>项目成果</h2>\n<ul>\n<li>成功部署上线</li>\n<li>获得良好的用户反馈</li>\n<li>展示个人技能和项目经验</li>\n</ul>"
+    }
+]
