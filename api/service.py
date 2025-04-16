@@ -60,13 +60,32 @@ class ProjectSearch:
             self.query_engine = self._create_query_engine()
 
     def _load_corpus(self) -> List[Dict]:
-        """加载项目语料库"""
+        """加载语料库"""
         try:
-            with open('projects.json', 'r', encoding='utf-8') as f:
-                return json.load(f)
+            corpus_dir = os.path.join(os.path.dirname(__file__), 'output', 'corpus')
+            if not os.path.exists(corpus_dir):
+                raise FileNotFoundError(f"语料库目录不存在: {corpus_dir}")
+            
+            # 读取语料库目录下的所有文件
+            documents = []
+            for filename in os.listdir(corpus_dir):
+                if filename.endswith('.json'):
+                    file_path = os.path.join(corpus_dir, filename)
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                        if isinstance(data, list):
+                            documents.extend(data)
+                        else:
+                            documents.append(data)
+            
+            if not documents:
+                raise ValueError("语料库为空")
+            
+            return documents
         except Exception as e:
             print(f"加载语料库失败: {str(e)}")
-            return []
+            traceback.print_exc()
+            raise
 
     def _build_index(self) -> VectorStoreIndex:
         """构建向量索引"""
