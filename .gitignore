@@ -26,3 +26,5 @@ logs
 _api
 
 *-demo.vue
+
+.api

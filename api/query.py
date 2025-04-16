@@ -1,11 +1,13 @@
 from http.server import BaseHTTPRequestHandler
 import json
 from typing import Dict, Any, List
-from service import get_relevant_content, stream_openai_response
 import os
 import redis
 from datetime import timedelta
 import traceback
+
+# 将 service 模块的代码直接导入
+from .service import get_relevant_content, stream_openai_response
 
 # 配置 Redis 连接
 REDIS_URL = os.getenv('REDIS_URL', 'redis://localhost:6379/0')

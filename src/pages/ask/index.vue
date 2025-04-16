@@ -318,7 +318,7 @@ const handleSearch = async () => {
   let lastUpdateTime = Date.now();
 
   try {
-    const response = await fetch("http://localhost:5000/query", {
+    const response = await fetch(`${process.env.API_BASE_URL || 'http://localhost:5000'}/query`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
