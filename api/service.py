@@ -99,7 +99,12 @@ class ProjectSearch:
         
         parser = SimpleNodeParser.from_defaults()
         nodes = parser.get_nodes_from_documents(documents)
-        return VectorStoreIndex(nodes)
+        
+        # 明确指定使用OpenAI的embeddings
+        from llama_index.embeddings.openai import OpenAIEmbedding
+        embed_model = OpenAIEmbedding()
+        
+        return VectorStoreIndex(nodes, embed_model=embed_model)
 
     def _create_retriever(self) -> VectorIndexRetriever:
         """创建检索器"""
