@@ -10,7 +10,7 @@ jobs:
 
     env:
       BACKEND_URL: https://foliokit.im0o.cn
-      ALLOWED_UPLOAD_TOKEN: ${{ secrets.API_TOKEN }}
+      ALLOWED_UPLOAD_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
     steps:
     - name: Checkout Repository
