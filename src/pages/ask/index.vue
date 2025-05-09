@@ -152,6 +152,7 @@ interface Message {
 }
 
 const { t, locale } = useI18n({ useScope: "local" });
+const config = useRuntimeConfig();
 
 definePageMeta({
   layout: "ask",
@@ -318,7 +319,7 @@ const handleSearch = async () => {
   let lastUpdateTime = Date.now();
 
   try {
-    const response = await fetch(`${process.env.API_BASE_URL || 'http://localhost:5000'}/api/ask`, {
+    const response = await fetch(`${config.public.apiBaseUrl}/api/ask`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

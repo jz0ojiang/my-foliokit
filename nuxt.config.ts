@@ -79,5 +79,10 @@ export default defineNuxtConfig({
   },
   generateFontGlyphs: {
     debug: true
+  },
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.API_BASE_URL || 'http://localhost:5000'
+    }
   }
 })
