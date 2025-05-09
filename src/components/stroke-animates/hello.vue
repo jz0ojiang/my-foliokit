@@ -11,18 +11,9 @@
 import { onMounted } from "vue";
 import { gsap } from "gsap";
 
-const emit = defineEmits(['animationComplete', 'animationStart']);
-
 onMounted(() => {
   const paths = document.querySelectorAll("svg path");
-  const tl = gsap.timeline({
-    onComplete: () => {
-      emit('animationComplete');
-    },
-    onStart: () => {
-      emit('animationStart');
-    }
-  });
+  const tl = gsap.timeline();
   const baseSpeed = 0.007;
 
   paths.forEach((path) => {
@@ -31,20 +22,20 @@ onMounted(() => {
     gsap.set(path, {
       strokeDasharray: length,
       strokeDashoffset: length,
-      opacity: 0,
+      opacity: 0, // 初始设置为完全透明
     });
 
     tl.to(path, {
       strokeDashoffset: 0,
-      duration: Math.max(0.4, length * baseSpeed),
+      duration: Math.max(0.4, length * baseSpeed), // 路径绘画时间
       ease: "power2.inOut",
-    }, 0);
+    }, 0); // 所有路径绘画同时开始
 
     tl.to(path, {
-      opacity: 1,
-      duration: 0.5,
+      opacity: 1, // 透明度渐显
+      duration: 0.5, // 固定透明度渐显时间
       ease: "power2.inOut",
-    }, "<");
+    }, "<"); // 与路径绘画同时开始
   });
 });
 </script>
@@ -66,6 +57,6 @@ path {
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
-  opacity: 0;
+  opacity: 0; /* 确保初始状态完全透明 */
 }
 </style>

@@ -1,6 +1,7 @@
 import type { ProjectsCollectionItem as BaseProjectsCollectionItem } from '@nuxt/content'
 
 export interface ProjectsCollectionItem extends BaseProjectsCollectionItem {
+  [x: string]: any
   title: string
   description?: string
   date: Date
@@ -11,7 +12,7 @@ export interface ProjectsCollectionItem extends BaseProjectsCollectionItem {
   top?: boolean
   draft?: boolean
   weight?: number
-  ai?: boolean
+  no_ai?: boolean
   abbrlink?: string
   lang?: string
   content?: string

@@ -318,7 +318,7 @@ const handleSearch = async () => {
   let lastUpdateTime = Date.now();
 
   try {
-    const response = await fetch(`${process.env.API_BASE_URL || 'http://localhost:5000'}/query`, {
+    const response = await fetch(`${process.env.API_BASE_URL || 'http://localhost:5000'}/api/ask`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -375,16 +375,18 @@ const handleSearch = async () => {
           if (data.from && data.from !== currentFrom) {
             currentFrom = data.from;
           }
+          if (data.context) {
+            continue;
+          }
           if (data.text) {
-            currentContent += data.text;
-            // 控制更新频率，每100ms更新一次
-            const now = Date.now();
-            if (now - lastUpdateTime >= 100) {
+            for (const char of data.text) {
+              currentContent += char;
               streamingContent.value = currentFrom
                 ? `from: ${currentFrom}\n${currentContent}`
                 : currentContent;
-              lastUpdateTime = now;
+
               scrollToBottom();
+              await new Promise(resolve => setTimeout(resolve, 15)); // 控制速度
             }
           }
         } catch (e) {
@@ -691,7 +693,11 @@ const startNewChat = () => {
   }
 
   :deep(li) {
-    @apply mb-2;
+    @apply mb-0 leading-relaxed;
+  }
+
+  :deep(li > p) {
+    @apply inline;
   }
 
   :deep(code) {

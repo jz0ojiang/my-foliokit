@@ -25,7 +25,7 @@
           </div>
         </div>
       </div>
-      <div v-if="projectData?.ai" class="ai-banner" @click="handleAskClick">
+      <div v-if="!projectData?.no_ai" class="ai-banner" @click="handleAskClick">
         <Icon name="carbon:ai-status" class="banner-icon" />
         <span>{{ t('ai.askAboutProject') }}</span>
         <Icon name="carbon:arrow-right" class="arrow-icon" />

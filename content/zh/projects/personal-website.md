@@ -13,7 +13,7 @@ link: https://github.com/yourusername/personal-website
 top: true
 draft: false
 weight: 1
-ai: false
+no_ai: true
 abbrlink: personal-website
 ---
 

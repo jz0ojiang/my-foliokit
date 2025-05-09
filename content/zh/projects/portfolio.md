@@ -12,7 +12,7 @@ link: https://github.com/yourusername/portfolio
 top: true
 draft: false
 weight: 4
-ai: false
+no_ai: true
 abbrlink: portfolio
 ---
 

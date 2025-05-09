@@ -12,6 +12,7 @@
     "new-project": "tsx script/new-project.ts"
   },
   "dependencies": {
+    "@llamaindex/openai": "^0.3.2",
     "@nuxt/content": "3.4.0",
     "@nuxt/fonts": "0.11.0",
     "@nuxt/icon": "1.11.0",
@@ -29,6 +30,7 @@
     "globby": "^14.1.0",
     "gsap": "^3.12.7",
     "gulp-rename": "^2.0.0",
+    "llamaindex": "^0.9.19",
     "lodash": "^4.17.21",
     "markdown-it": "^14.1.0",
     "nuxt": "^3.16.1",

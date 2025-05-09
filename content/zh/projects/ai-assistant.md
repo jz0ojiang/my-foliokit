@@ -14,7 +14,7 @@ link: https://github.com/yourusername/ai-assistant
 top: true
 draft: false
 weight: 2
-ai: true
+no_ai: true
 ---
 
 ## 项目概述

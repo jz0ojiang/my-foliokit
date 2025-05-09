@@ -13,7 +13,7 @@ link: https://github.com/yourusername/mobile-app
 top: true
 draft: false
 weight: 3
-ai: false
+no_ai: true
 abbrlink: mobile-app
 ---
 

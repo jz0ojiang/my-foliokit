@@ -19,7 +19,7 @@ export default defineContentConfig({
         top: z.boolean().optional(),
         draft: z.boolean().optional(),
         weight: z.number().optional(),
-        ai: z.boolean().optional(),
+        no_ai: z.boolean().optional(),
         abbrlink: z.string().length(8).optional(),
       }),
     })
