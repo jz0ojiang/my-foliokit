@@ -1,39 +1,39 @@
 <template>
   <div class="search-results">
-    <h1 class="text-2xl font-bold mb-8 text-center">
+    <h1 class="search-title">
       {{ t('search.results_for', { query: route.query.q }) }}
     </h1>
     
-    <div v-if="loading" class="text-center py-8">
-      <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 mx-auto"></div>
+    <div v-if="loading" class="loading-container">
+      <div class="loading-spinner"></div>
     </div>
     
-    <div v-else-if="results.length === 0" class="text-center py-8">
-      <p class="text-gray-600">{{ t('search.no_results') }}</p>
+    <div v-else-if="results.length === 0" class="no-results">
+      <p class="no-results-text">{{ t('search.no_results') }}</p>
     </div>
     
-    <div v-else class="space-y-8">
+    <div v-else class="results-container">
       <div v-for="project in results" :key="project.id" 
-           class="group bg-white dark:bg-gray-800 rounded-xl p-6 transition-all duration-300 hover:shadow-lg">
-        <h2 class="text-xl font-semibold mb-3">
-          <NuxtLink :to="`/projects/${project.abbrlink}`" class="hover:text-primary">
+           class="project-card group">
+        <h2 class="project-title">
+          <NuxtLink :to="`/projects/${project.abbrlink}`" class="project-link">
             <span v-html="highlightText(project.title, searchQuery)"></span>
           </NuxtLink>
         </h2>
         
-        <div class="mb-4">
-          <CommonTag v-for="tag in project.tags" :key="tag" :tag="tag" class="mr-2 mb-2" />
+        <div class="tags-container">
+          <CommonTag v-for="tag in project.tags" :key="tag" :tag="tag" class="tag-item" />
         </div>
         
-        <div class="text-gray-600 dark:text-gray-400 line-clamp-3 text-sm" 
+        <div class="project-content" 
              v-html="getHighlightedContent(project)">
         </div>
         
-        <div class="mt-4 flex items-center text-sm text-gray-500 dark:text-gray-400">
+        <div class="project-footer">
           <time :datetime="formatDate(project.date)">{{ formatDate(project.date) }}</time>
-          <span class="mx-2">·</span>
+          <span class="separator">·</span>
           <NuxtLink :to="`/projects/${project.abbrlink}`" 
-                   class="text-primary hover:text-primary-dark transition-colors">
+                   class="read-more-link">
             {{ t('search.read_more') }}
           </NuxtLink>
         </div>
@@ -45,6 +45,7 @@
 <script setup lang="ts">
 import type { ProjectsCollectionItem } from '@/types/project'
 import { searchProjects } from '@/utils/search'
+import { useSeoMetaForPage } from '~/components/useSeoMetaForPage'
 
 const route = useRoute()
 const { locale, t } = useI18n()
@@ -52,6 +53,10 @@ const loading = ref(true)
 const results = ref<ProjectsCollectionItem[]>([])
 const searchQuery = computed(() => route.query.q as string)
 
+
+useSeoMetaForPage('search', {
+  title: t('search.results_for', { query: searchQuery.value }),
+})
 // 格式化日期
 function formatDate(date: string | Date): string {
   if (typeof date === 'string') {
@@ -72,7 +77,10 @@ function formatDate(date: string | Date): string {
 function highlightText(text: string, query: string) {
   if (!query) return text
   const regex = new RegExp(`(${query})`, 'gi')
-  return text.replace(regex, '<span class="bg-yellow-200 dark:bg-yellow-900">$1</span>')
+  return text.replace(
+    regex,
+    '<span class="highlight-text">$1</span>'
+  )
 }
 
 // 获取高亮的内容摘要
@@ -116,23 +124,76 @@ watch(() => route.query.q, async (newQuery) => {
 }, { immediate: true })
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
 .search-results {    
-    min-height: 85vh;
+  min-height: 85vh;
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
 }
 
-:deep(.bg-yellow-200) {
-  padding: 0.1em 0.2em;
-  border-radius: 0.2em;
+.search-title {
+  @apply text-2xl font-bold mb-8 text-center;
 }
 
-:deep(.bg-yellow-900) {
-  padding: 0.1em 0.2em;
-  border-radius: 0.2em;
-  color: white;
+.loading-container {
+  @apply text-center py-8;
+}
+
+.loading-spinner {
+  @apply animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900 mx-auto;
+}
+
+.no-results {
+  @apply text-center py-8;
+}
+
+.no-results-text {
+  @apply text-gray-600;
+}
+
+.results-container {
+  @apply space-y-6;
+}
+
+.project-card {
+  @apply bg-gray-800 dark:bg-gray-900 rounded-xl p-6 transition-all duration-300 hover:shadow-lg;
+}
+
+.project-title {
+  @apply text-xl font-semibold mb-3;
+}
+
+.project-link {
+  @apply hover:text-blue-500;
+}
+
+.tags-container {
+  @apply mb-4;
+}
+
+.tag-item {
+  @apply mr-2 mb-2;
+}
+
+.project-content {
+  @apply text-gray-600 dark:text-gray-400 line-clamp-3 text-sm;
+}
+
+.project-footer {
+  @apply mt-4 flex items-center text-sm text-gray-500 dark:text-gray-400;
+}
+
+.separator {
+  @apply mx-2;
+}
+
+.read-more-link {
+  @apply text-blue-500 hover:text-blue-600 transition-colors;
+}
+
+:deep(.highlight-text) {
+  @apply bg-yellow-300 dark:bg-yellow-600 font-bold px-1 rounded text-gray-900 dark:text-yellow-100;
 }
 </style>
 

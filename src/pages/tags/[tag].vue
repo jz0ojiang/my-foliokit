@@ -21,10 +21,13 @@
 import ProjectCard from '@/components/common/ProjectCard.vue';
 import { getProjectsByTag } from '@/utils/getProjects';
 import { useI18n } from 'vue-i18n';
+import { useSeoMetaForPage } from '~/components/useSeoMetaForPage';
 
 const { locale: lang, t } = useI18n()
 const { tag } = useRoute().params
 const projects = await getProjectsByTag(lang.value, tag as string)
+
+useSeoMetaForPage('tags', {title: tag as string})
 </script>
 
 <style lang="postcss" scoped>

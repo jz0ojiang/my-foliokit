@@ -12,10 +12,13 @@
 <script async setup lang="ts">
 import ProjectCard from '@/components/common/ProjectCard.vue';
 import { useI18n } from 'vue-i18n';
+import { useSeoMetaForPage } from '~/components/useSeoMetaForPage';
 import { getProjects } from '~/utils/getProjects';
 
 const { locale: lang, t } = useI18n({ useScope: 'local' });
 const projectsData = await getProjects(lang.value, 0, -1)
+
+useSeoMetaForPage('projects')
 </script>
 
 <style lang="postcss" scoped>

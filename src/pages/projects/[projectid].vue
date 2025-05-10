@@ -70,6 +70,7 @@ import type { ProjectsCollectionItem } from '@/types/project'
 import defaultCover from '@/assets/images/default-cover.jpeg'
 import { onMounted, ref } from 'vue'
 import Tag from '@/components/common/Tag.vue'
+import { useSeoMetaForPage } from '~/components/useSeoMetaForPage'
 
 const { locale, t } = useI18n()
 const route = useRoute()
@@ -93,62 +94,6 @@ onMounted(() => {
   // 开始加载图片
   img.src = projectData.value.cover;
 });
-
-// 获取标签的CSS类名
-const getTagClass = (tag: string) => {
-  const lowerTag = tag.toLowerCase();
-
-  // 常见技术标签映射
-  const techTags: Record<string, string> = {
-    'html': 'tag-html',
-    'css': 'tag-css',
-    'js': 'tag-javascript',
-    'javascript': 'tag-javascript',
-    'ts': 'tag-typescript',
-    'typescript': 'tag-typescript',
-    'vue': 'tag-vue',
-    'vuejs': 'tag-vue',
-    'vue.js': 'tag-vue',
-    'react': 'tag-react',
-    'reactjs': 'tag-react',
-    'react.js': 'tag-react',
-    'angular': 'tag-angular',
-    'nodejs': 'tag-nodejs',
-    'node.js': 'tag-nodejs',
-    'express': 'tag-express',
-    'python': 'tag-python',
-    'golang': 'tag-golang',
-    'go': 'tag-golang',
-    'java': 'tag-java',
-    'cpp': 'tag-cpp',
-    'c++': 'tag-cpp',
-    'rust': 'tag-rust',
-    'svelte': 'tag-svelte',
-    'swift': 'tag-swift',
-    'dart': 'tag-dart',
-    'shell': 'tag-shell',
-    'bash': 'tag-shell',
-    'hexo': 'tag-hexo',
-    'nuxt': 'tag-nuxt',
-    'nuxtjs': 'tag-nuxt',
-    'nuxt.js': 'tag-nuxt',
-    'markdown': 'tag-markdown',
-    'md': 'tag-markdown',
-    'json': 'tag-json',
-    'ai': 'tag-ai',
-    'mentor': 'tag-mentor',
-    'foliokit': 'tag-foliokit'
-  };
-
-  // 返回对应的标签类，如果没有匹配则返回默认类
-  return techTags[lowerTag] || 'tag-empty';
-};
-
-// 处理标签点击
-const handleTagClick = (tag: string) => {
-  const path = localePath(`/tags/${tag}`);
-  navigateTo(path);
-}
 
 // 处理AI提问点击
 const handleAskClick = () => {
@@ -195,6 +140,9 @@ const { data: projectData } = await useAsyncData<ProjectsCollectionItem | null>(
     watch: [locale]
   }
 )
+
+useSeoMetaForPage('projects', {title: projectData.value?.title})
+
 </script>
 
 <style lang="postcss" scoped>

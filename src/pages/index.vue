@@ -6,8 +6,9 @@
         <h2 class="section-title">{{ t('portfolio') }}</h2>
         <div class="projects-grid">
           <CommonProjectCard 
-            v-for="project in projects" 
+            v-for="(project, idx) in projects" 
             :key="project.id"
+            :class="{ 'slide-in': idx >= prevCount }"
             :title="project.title"
             :cover="project.cover || '/images/placeholder.jpg'"
             :time="project.date"
@@ -17,12 +18,14 @@
             :abbrlink="project.abbrlink"
           />
         </div>
-      </div>
-      <div class="load-more-container" v-if="showMore">
-        <span class="block w-[6rem] h-[.5rem] rounded-full"></span>
-        <button class="load-more-button" @click="loadMore">
-          {{ loadMoreText }}
-        </button>
+        <Transition name="fade">
+          <div class="load-more-container" v-if="showMore">
+            <span class="block w-[6rem] h-[.5rem] rounded-full"></span>
+            <button class="load-more-button" @click="loadMore" :disabled="isLoadingMore">
+              {{ loadMoreText }}
+            </button>
+          </div>
+        </Transition>
       </div>
     </div>
   </div>
@@ -35,15 +38,20 @@ import MainContainer from '@/components/MainContainer.vue'
 import { getProjects } from '@/utils/getProjects'
 import { ref, computed, onMounted } from 'vue'
 import type { Project } from '@/types/project'
+import { useSeoMetaForPage } from '~/components/useSeoMetaForPage';
 
 const localePath = useLocalePath();
 const showMore = ref(false)
 const start = ref(0)
 const projects = ref<Project[]>([])
+const isLoadingMore = ref(false)
+const prevCount = ref(0)
 
 const { t, locale } = useI18n({
   useScope: 'local'
 })
+
+useSeoMetaForPage('index')
 
 const loadMoreText = computed(() => {
   return start.value > 11 ? t('jumpToProjects') : t('loadMore')
@@ -54,7 +62,8 @@ const loadMore = async () => {
     navigateTo(localePath('/projects'))
     return
   }
-  
+  prevCount.value = projects.value.length
+  isLoadingMore.value = true
   const newProjects = await getProjects(locale.value, start.value, 6)
   if (newProjects.length >= (projects.value.length - start.value)) {
     showMore.value = false
@@ -63,6 +72,7 @@ const loadMore = async () => {
   if (newProjects.length > 5) {
     start.value += 6
   }
+  isLoadingMore.value = false
 }
 
 onMounted(async () => {
@@ -92,7 +102,7 @@ onMounted(async () => {
 .projects-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 2rem 0 6rem;
 }
 
 .section-title {
@@ -159,6 +169,26 @@ body {
   overflow: hidden;
 }
 
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+
+.slide-in {
+  animation: slideInDown 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px) scaleY(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
 </style>
 
 <i18n lang="yaml">

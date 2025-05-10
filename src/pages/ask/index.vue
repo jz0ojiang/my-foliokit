@@ -141,6 +141,7 @@ import DOMPurify from "dompurify";
 import { useRoute } from "vue-router";
 import { getProjectNameByAbbrlink } from "@/utils/getProjects";
 import MarkdownIt from "markdown-it";
+import { useSeoMetaForPage } from "~/components/useSeoMetaForPage";
 
 interface Message {
   role: "user" | "assistant";
@@ -157,6 +158,8 @@ const config = useRuntimeConfig();
 definePageMeta({
   layout: "ask",
 });
+
+useSeoMetaForPage('ask')
 
 // 添加URL查询参数处理
 const route = useRoute();

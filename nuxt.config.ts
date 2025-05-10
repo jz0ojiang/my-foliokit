@@ -64,9 +64,11 @@ export default defineNuxtConfig({
     strategy: 'prefix_except_default',
     defaultLocale: 'zh',
     lazy: true,
+    restructureDir: 'src/i18n',
+    langDir: 'locales',
     locales: [
-      { code: 'zh', iso: 'zh-CN', name: '简体中文' },
-      { code: 'en', iso: 'en-US', name: 'English' }
+      { code: 'zh', iso: 'zh-CN', name: '简体中文', file: 'zh.json' },
+      { code: 'en', iso: 'en-US', name: 'English', file: 'en.json' }
     ],
     detectBrowserLanguage: {
       useCookie: true,

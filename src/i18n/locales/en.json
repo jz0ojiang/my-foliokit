@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "global": {
+      "displayName": "Jason Ji",
+      "suffix": "'|' FolioKit",
+      "ogTitle": "FolioKit - Build Your Portfolio Smarter and Faster",
+      "ogDescription": "Open-source. Responsive. AI-powered. FolioKit helps your work stand out."
+    },
+    "page": {
+      "index": {
+        "title": "Portfolio",
+        "description": "Welcome to my personal portfolio. Discover my projects, skills, and experience."
+      },
+      "projects": {
+        "title": "Projects",
+        "description": "A curated collection of works in frontend development, UI design, and open source."
+      },
+      "project": {
+        "title": "Project Detail",
+        "description": "Learn more about the project's background, tech stack, and contributions."
+      },
+      "tags": {
+        "title": "Tags",
+        "description": "Browse projects by tags and discover related topics."
+      },
+      "ask": {
+        "title": "Ask AI",
+        "description": "Ask the AI about project details and background information."
+      },
+      "search": {
+        "title": "Search",
+        "description": "Search for projects, tags, or keywords to quickly find what you need."
+      },
+      "about": {
+        "title": "About Me",
+        "description": "Explore my background, career path, and personal journey."
+      }
+    }
+  }
+}

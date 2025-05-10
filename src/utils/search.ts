@@ -56,10 +56,12 @@ export async function searchProjects(query: string, locale: string): Promise<Pro
   const contentResults = await Promise.all(
     searchTerms.map(async (term) => {
       try {
+        const lang = locale === 'en-US' ? 'en' : locale
         const { data } = await useAsyncData(`search-${term}`, () => 
           queryCollection('projects')
             .where('draft', 'NOT LIKE', true)
             .where('body', 'LIKE', `%${term}%`)
+            .where('path', 'LIKE', `/${lang}/projects/%`)
             .all()
         )
         return data.value || []
@@ -78,8 +80,21 @@ export async function searchProjects(query: string, locale: string): Promise<Pro
     }
   })
   
-  console.log('Found results:', allResults.length)
-  return allResults
+  // abbrlink 兜底处理，参考 getProjects 逻辑
+  function ensureAbbrlink(project: any) {
+    if (project.abbrlink && project.abbrlink !== 'projects') return project.abbrlink;
+    const path = project.path || project.id || '';
+    const match = path.match(/\/projects\/([^/.]+)(?:\.md)?$/);
+    if (match && match[1] && match[1] !== 'projects') return match[1];
+    return (project.id || '').slice(-8);
+  }
+  const finalResults = allResults.map(project => ({
+    ...project,
+    abbrlink: ensureAbbrlink(project)
+  }))
+  
+  console.log('Found results:', finalResults.length)
+  return finalResults
 }
 
 // 搜索函数别名

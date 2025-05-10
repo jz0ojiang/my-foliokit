@@ -76,8 +76,9 @@ const handleLanguageSwitch = async (newLang: 'zh' | 'en') => {
   // 更新语言
   locale.value = newLang;
   
-  // 更新路由
+  // 获取当前 path 和 query
   const currentPath = route.path;
+  const currentQuery = route.query;
   const defaultLocale = 'zh';
   
   let newPath: string;
@@ -91,7 +92,8 @@ const handleLanguageSwitch = async (newLang: 'zh' | 'en') => {
       : `/${newLang}/${currentPath}`;
   }
   
-  await navigateTo(newPath);
+  // 跳转时带上 query
+  await navigateTo({ path: newPath, query: currentQuery });
   isOpen.value = false;
 };
 
