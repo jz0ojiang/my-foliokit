@@ -1,8 +1,8 @@
 name: Upload Corpus to Backend
 
 on:
-  # push:
-  #   branches: [main]  # or your deployment branch
+  push:
+    branches: [main]  # or your deployment branch
   workflow_dispatch:
 
 jobs:
