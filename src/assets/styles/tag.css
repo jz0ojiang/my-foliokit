@@ -1,0 +1,89 @@
+:root {
+  /* 语言类 tag */
+  --tag-color-html: #E34F26;
+  --tag-color-css: #1572B6;
+  --tag-color-javascript: #F7DF1E;
+  --tag-color-typescript: #3178C6;
+  --tag-color-vue: #42B883;
+  --tag-color-react: #61DAFB;
+  --tag-color-angular: #DD0031;
+  --tag-color-nodejs: #43853D;
+  --tag-color-express: #000000;
+  --tag-color-python: #3776AB;
+  --tag-color-golang: #00ADD8;
+  --tag-color-java: #007396;
+  --tag-color-cpp: #00599C;
+  --tag-color-rust: #DEA584;
+  --tag-color-svelte: #FF3E00;
+  --tag-color-swift: #FA7343;
+  --tag-color-dart: #0175C2;
+  --tag-color-shell: #89E051;
+  --tag-color-hexo: #0E83CD;
+  --tag-color-nuxt: #00DC82;
+  --tag-color-markdown: #000000;
+  --tag-color-json: #292929;
+
+  /* 框架和工具类 tag */
+  --tag-color-docker: #2496ED;
+  --tag-color-kubernetes: #326CE5;
+  --tag-color-git: #F05032;
+  --tag-color-mongodb: #47A248;
+  --tag-color-mysql: #4479A1;
+  --tag-color-postgresql: #336791;
+  --tag-color-redis: #DC382D;
+  --tag-color-nginx: #009639;
+  --tag-color-jest: #C21325;
+  --tag-color-webpack: #8DD6F9;
+  --tag-color-vite: #646CFF;
+  --tag-color-tailwind: #06B6D4;
+  --tag-color-bootstrap: #7952B3;
+  --tag-color-jquery: #0769AD;
+  --tag-color-aws: #232F3E;
+  --tag-color-azure: #0078D4;
+  --tag-color-gcp: #4285F4;
+
+  /* 开发领域 tag */
+  --tag-color-frontend: #61DAFB;
+  --tag-color-webdev: #4CAF50;
+  --tag-color-mobiledev: #FF5722;
+  --tag-color-reactnative: #61DAFB;
+  --tag-color-machinelearning: #FF6B6B;
+  --tag-color-nlp: #9C27B0;
+  --tag-color-datascience: #2196F3;
+  --tag-color-datavisualization: #FF9800;
+  --tag-color-backend: #607D8B;
+  --tag-color-fullstack: #795548;
+  --tag-color-devops: #3F51B5;
+  --tag-color-cloud: #00BCD4;
+  --tag-color-iot: #8BC34A;
+  --tag-color-blockchain: #673AB7;
+  --tag-color-gamedev: #E91E63;
+  --tag-color-cybersecurity: #F44336;
+
+  /* 通用标签颜色系统 */
+  --tag-color-primary: var(--color-primary);
+  --tag-color-secondary: var(--color-secondary);
+  --tag-color-success: #4CAF50;
+  --tag-color-warning: #FFC107;
+  --tag-color-danger: #F44336;
+  --tag-color-info: #2196F3;
+  --tag-color-light: #F5F5F5;
+  --tag-color-dark: #212121;
+  
+  /* 灰度系统 */
+  --tag-color-gray-100: #F5F5F5;
+  --tag-color-gray-200: #EEEEEE;
+  --tag-color-gray-300: #E0E0E0;
+  --tag-color-gray-400: #BDBDBD;
+  --tag-color-gray-500: #9E9E9E;
+  --tag-color-gray-600: #757575;
+  --tag-color-gray-700: #616161;
+  --tag-color-gray-800: #424242;
+  --tag-color-gray-900: #212121;
+
+  /* 非语言类 tag */
+  --tag-color-empty: #9E9E9E;
+  --tag-color-mentor: #5D6FB5; /* 例如用主色 primary */
+  --tag-color-ai: #0191FF;
+  --tag-color-foliokit: linear-gradient(to right, #ff6b6b, #f7b733);
+}

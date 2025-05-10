@@ -1,0 +1,115 @@
+/* 首屏专用子集字体 - 最高优先级 */
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('/fonts/subsets/LXGWWenKaiLite-Regular.woff2') format('woff2');
+  font-display: block;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LXGW WenKai';
+  src: url('/fonts/subsets/LXGWWenKaiLite-Medium.woff2') format('woff2');
+  font-display: block;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* 其他字体 - 次优先级 */
+@font-face {
+  font-family: Poppins;
+  src: url('/fonts/Poppins-Regular.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url('/fonts/Poppins-Bold.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LXGW WenKai Full';
+  src: url('/fonts/LXGWWenKaiLite-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LXGW WenKai Full';
+  src: url('/fonts/LXGWWenKaiLite-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* 背景 */
+  --color-surface-default: #0F121E;
+  --color-surface-muted: #151720;
+  --color-surface-card: #464B5B;
+  --color-surface-card-inner: #23262F;
+
+  /* 文本 */
+  --color-text-primary: #F0F5FF;
+  --color-text-secondary: #9E9E9E;
+  --color-text-tertiary: #C4C4C4;
+  --color-text-inverse: #FFFFFF;
+
+  /* 状态色（用途灵活） */
+  --color-info: #5D6FB5;
+  --color-error: #B55D5D;
+  --color-warning: #F7B501;
+  --color-success: #2BA471;
+
+  /* 链接 / 强调 */
+  --color-link: #40A9FF;
+  --color-accent: #0191FF;
+
+  /* 品牌 / 强调字体 */
+  --color-primary: #5D6FB5;
+  --color-brand: #FFFFFF;
+
+  /* 图标 / tag */
+  --color-icon-muted: #B7C6E3;
+  --color-tag-empty: #9E9E9E;
+
+  margin: 0;
+  padding: 0;
+  color: var(--color-text-primary);
+  background: var(--color-surface-default);
+  /* 默认禁用滚动条 */
+  overflow: hidden;
+}
+
+body {
+  font-family: 'LXGW WenKai';
+  transition: font-family 0.3s ease;
+  /* 默认禁用滚动条 */
+  overflow: hidden;
+}
+
+/* 当应用此类时启用滚动条 */
+.enable-scroll {
+  overflow: auto !important;
+}
+
+select {
+  background: transparent;
+  color: var(--color-text-primary);
+}
+
+/* 首屏加载优化 */
+html.visually-hidden {
+  opacity: 0;
+}
+
+html.visually-visible {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
