@@ -1,15 +1,15 @@
 name: Upload Corpus to Backend
 
-on:
-  push:
-    branches: [main]  # or your deployment branch
+# on:
+#   push:
+#     branches: [main]  # or your deployment branch
 
 jobs:
   generate-and-upload:
     runs-on: ubuntu-latest
 
     env:
-      BACKEND_URL: https://foliokit.im0o.cn
+      BACKEND_URL: your_backend_url
       ALLOWED_UPLOAD_TOKEN: ${{ secrets.ACCESS_TOKEN }}
 
     steps:
