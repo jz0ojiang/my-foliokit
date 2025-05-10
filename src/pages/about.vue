@@ -18,7 +18,7 @@
         <Icon name="mdi:tools" class="section-icon" />
         <h2 class="section-title">{{ t('workingOnTitle') }}</h2>
       </div>
-      <p>{{ t('currentlyBuilding') }} <NuxtLink to="https://github.com/jz0ojiang/folioKit" class="link">FolioKit</NuxtLink>:</p>
+      <p>{{ t('currentlyBuilding') }} <NuxtLink to="https://github.com/jz0ojiang/Foliokit" class="link">FolioKit</NuxtLink>:</p>
       <p class="description">{{ t('projectDescription1') }}</p>
       <p class="description">{{ t('projectDescription2') }}</p>
       <p class="description">{{ t('projectDescription3') }}</p>
@@ -29,7 +29,7 @@
         <Icon name="mdi:star" class="section-icon" />
         <h2 class="section-title">{{ t('aboutSiteTitle') }}</h2>
       </div>
-      <p>{{ t('siteDescription1') }} <NuxtLink to="https://github.com/jz0ojiang/folioKit" class="link">FolioKit</NuxtLink>.</p>
+      <p>{{ t('siteDescription1') }} <NuxtLink to="https://github.com/jz0ojiang/Foliokit" class="link">FolioKit</NuxtLink>.</p>
       <p class="description">{{ t('siteDescription2') }}</p>
       <p class="description">{{ t('siteDescription3') }}</p>
       <p class="description">{{ t('siteDescription4') }}</p>

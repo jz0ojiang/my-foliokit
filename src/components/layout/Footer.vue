@@ -29,7 +29,7 @@
       「{{ t('motto') }}」
     </div>
     <div class="copyright">
-      © {{ new Date().getFullYear() }}. Built with <NuxtLink to="https://github.com/FolioKit/FolioKit" target="_blank" class="folio-link">FolioKit</NuxtLink> – {{ t('footerDesc') }}.
+      © {{ new Date().getFullYear() }}. Built with <NuxtLink to="https://github.com/jz0ojiang/Foliokit" target="_blank" class="folio-link">FolioKit</NuxtLink> – {{ t('footerDesc') }}.
     </div>
     <LangSwitcher class="mobile-lang-switcher" :popup-top="true" />
   </footer>
