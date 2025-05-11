@@ -118,7 +118,7 @@ const { t, locale } = useI18n({
 
 <i18n lang="yaml">
 zh:
-  name: "，我是 Oo酱"
+  name: "，我是 0o酱"
   description1: "一个喜欢把技术和美感探在一起的开发者。"
   description2: "专注 Web 前端/全栈开发，热衷于做「简洁而不简单」的产品。"
   workingOnTitle: "最近在做什么？"

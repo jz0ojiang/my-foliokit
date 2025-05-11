@@ -136,7 +136,9 @@ const formattedTimeRange = computed(() => {
   } else {
     endTime = props.endTime;
   }
-
+  if (startTime === endTime) {
+    return startTime;
+  }
   return `${startTime} - ${endTime}`;
 });
 </script>

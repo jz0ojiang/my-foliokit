@@ -17,7 +17,8 @@ export const getProjects = async (lang: string, start: number = 0, limit: number
       return queryCollection('projects').all()
   })
   projects = projectsData.value || []
-  projects = projects.filter((project) => project.path.startsWith(`/${lang}/projects/`))
+  const regex = new RegExp(`\\/${lang}\\/projects\\/`)
+  projects = projects.filter((project) => regex.test(project.id))
   // sort: top, weight, date
   projects.sort((a, b) => {
     // 首先比较置顶状态
