@@ -232,6 +232,11 @@ useSeoMetaForPage('projects', {title: projectData.value?.title})
     color: var(--color-code);
     background-color: var(--color-surface-card);
     @apply px-2 py-1 rounded;
+
+    &::before,
+    &::after {
+      content: none !important;
+    }
   }
 
   :deep(pre) {
@@ -246,6 +251,10 @@ useSeoMetaForPage('projects', {title: projectData.value?.title})
   :deep(blockquote) {
     border-color: var(--color-border);
     color: var(--color-text-secondary);
+
+    p:first-of-type::before {
+      content: none !important;
+    }
   }
 }
 
