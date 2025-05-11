@@ -248,6 +248,22 @@ useSeoMetaForPage('projects', {title: projectData.value?.title})
     }
   }
 
+  :deep(table) {
+    @apply w-full border-collapse my-4;
+  }
+
+  :deep(th) {
+    @apply px-4 py-2 text-left border-b border-slate-700 bg-slate-800/50 text-slate-200 font-medium;
+  }
+
+  :deep(td) {
+    @apply px-4 py-2 border-b border-slate-700 text-slate-300;
+  }
+
+  :deep(tr:hover) {
+    @apply bg-slate-800/30;
+  }
+
   :deep(blockquote) {
     border-color: var(--color-border);
     color: var(--color-text-secondary);

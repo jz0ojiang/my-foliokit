@@ -90,7 +90,12 @@ onMounted(() => {
 const handleClick = () => {
   // 优先使用 abbrlink 作为路由
   if (props.abbrlink) {
-    const path = `/projects/${props.abbrlink}`;
+    let path = '';
+    if (locale.value === 'zh') {
+      path = `/projects/${props.abbrlink}`;
+    } else {
+      path = `/en/projects/${props.abbrlink}`;
+    }
     console.log('Navigation with abbrlink:', {
       abbrlink: props.abbrlink,
       finalPath: path
