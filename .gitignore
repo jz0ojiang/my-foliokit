@@ -31,3 +31,5 @@ _api
 .vercel
 
 __pycache__
+
+corpus

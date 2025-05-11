@@ -14,7 +14,7 @@ link: https://github.com/jz0ojiang/Foliokit
 top: true
 weight: 5
 no_ai: false
-abbrlink: 9bbc228c
+abbrlink: 8105cace
 ---
 
 > Content summarized by ChatGPT, may have a strong AI flavor \:D

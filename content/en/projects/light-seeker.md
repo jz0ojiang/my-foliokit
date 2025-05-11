@@ -13,7 +13,7 @@ tags:
   - Visual Design#A166AB
 link: https://lightseek.demo.im0o.top/
 weight: 5
-abbrlink: 7f0409b1
+abbrlink: bc14de21
 draft: false
 ---
 
