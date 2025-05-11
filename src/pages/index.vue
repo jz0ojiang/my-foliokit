@@ -12,7 +12,7 @@
             :title="project.title"
             :cover="project.cover || '/images/placeholder.jpg'"
             :time="project.date"
-            :end-time="project.endDate || 'present'"
+            :end-time="project.endDate"
             :tags="project.tags"
             :is-top="project.top"
             :abbrlink="project.abbrlink"

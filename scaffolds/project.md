@@ -10,7 +10,7 @@ link: https://github.com # optional ; 可选项
 top: false # optional ; 可选项
 draft: false # optional ; 可选项
 weight: 5 # optional ; 可选项
-ai: true # optional ; 可选项
+no_ai: false # optional ; 可选项
 abbrlink: {{ abbrlink }}
 ---
 
