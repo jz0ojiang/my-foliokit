@@ -32,4 +32,10 @@ _api
 
 __pycache__
 
-corpus
+corpus/*.json
+corpus/en_corpus.json
+corpus/zh_corpus.json
+
+src/public/fonts/subsets/*.ttf
+src/public/fonts/subsets/*.woff
+src/public/fonts/subsets/*.woff2
