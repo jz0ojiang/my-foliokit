@@ -37,10 +37,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
+import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 import { navigateTo } from '#app';
+import { useSeoMetaForPage } from '~/components/useSeoMetaForPage';
 
 const { locale } = useI18n();
 const route = useRoute();
@@ -94,7 +95,13 @@ const handleLanguageSwitch = async (newLang: 'zh' | 'en') => {
   
   // 跳转时带上 query
   await navigateTo({ path: newPath, query: currentQuery });
+  
+  // 先关闭下拉菜单
   isOpen.value = false;
+  
+  // 等待路由切换完成后再更新 SEO 元数据
+  await nextTick();
+  useSeoMetaForPage();
 };
 
 // 点击外部关闭下拉菜单
