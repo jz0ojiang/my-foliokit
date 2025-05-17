@@ -3,7 +3,7 @@ title: FolioKit
 date: 2025-04-15
 description: AI-powered portfolio generator with semantic Q&A and multilingual content display
 endDate: present
-cover: /images/example-cover.png
+cover: https://image.im0o.top/2024/202505140042605.png
 tags:
   - FolioKit
   - Nuxt
@@ -13,7 +13,6 @@ tags:
 link: https://github.com/jz0ojiang/Foliokit
 top: true
 weight: 5
-no_ai: false
 abbrlink: 8105cace
 ---
 

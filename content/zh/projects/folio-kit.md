@@ -3,7 +3,7 @@ title: FolioKit
 date: 2025-04-15
 description: AI 驱动的个人作品集生成器，支持语义问答与多语言内容展示
 endDate: present
-cover: /images/example-cover.png
+cover: https://image.im0o.top/2024/202505140042605.png
 tags:
   - FolioKit
   - Nuxt

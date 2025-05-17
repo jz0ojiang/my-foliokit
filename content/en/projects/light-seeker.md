@@ -12,7 +12,7 @@ tags:
   - Teaching Project#7FB069
   - Visual Design#A166AB
 link: https://lightseek.demo.im0o.top/
-weight: 5
+weight: 4
 abbrlink: bc14de21
 draft: false
 ---
