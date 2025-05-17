@@ -159,7 +159,7 @@ definePageMeta({
   layout: "ask",
 });
 
-useSeoMetaForPage('ask')
+useSeoMetaForPage({pageKey: 'ask'})
 
 // 添加URL查询参数处理
 const route = useRoute();
