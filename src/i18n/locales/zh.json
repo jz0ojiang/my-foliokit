@@ -1,7 +1,7 @@
 {
   "meta": {
     "global": {
-      "displayName": "0o酱",
+      "displayName": "你的名字(Edit this in src/i18n/locales/zh.json)",
       "suffix": "{'|'} FolioKit",
       "ogTitle": "FolioKit - 快速构建专属作品集",
       "ogDescription": "开源 · 响应式 · AI 加持，FolioKit 让你的技能与项目脱颖而出。"

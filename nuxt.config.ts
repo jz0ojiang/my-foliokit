@@ -60,6 +60,19 @@ export default defineNuxtConfig({
     'nuxt-twemoji',
     '@pinia/nuxt'
   ],
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: 'github-dark',
+          langs: [
+            'json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml',
+            'python', 'go', 'javascript', 'typescript'
+          ]
+        }
+      }
+    }
+  },
   i18n: {
     strategy: 'prefix_except_default',
     defaultLocale: 'zh',
