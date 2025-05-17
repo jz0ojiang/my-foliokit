@@ -41,7 +41,7 @@ import { ref, computed, onMounted, onBeforeUnmount, nextTick } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute } from 'vue-router';
 import { navigateTo } from '#app';
-import { useSeoMetaForPage } from '~/components/useSeoMetaForPage';
+import { updateSeoMetaWithLocale } from '~/components/useSeoMetaForPage';
 
 const { locale } = useI18n();
 const route = useRoute();
@@ -100,8 +100,7 @@ const handleLanguageSwitch = async (newLang: 'zh' | 'en') => {
   isOpen.value = false;
   
   // 等待路由切换完成后再更新 SEO 元数据
-  await nextTick();
-  useSeoMetaForPage();
+  await updateSeoMetaWithLocale({locale: newLang});
 };
 
 // 点击外部关闭下拉菜单

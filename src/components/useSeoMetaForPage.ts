@@ -1,4 +1,6 @@
-import { useI18n, useLocaleHead, useRoute, useHead } from '#imports'
+import { useNuxtApp, useLocaleHead, useRoute, useHead } from '#imports'
+
+const route = useRoute()
 
 interface SeoOverrides {
   title?: string
@@ -8,21 +10,25 @@ interface SeoOverrides {
   ogImage?: string
 }
 
-export function useSeoMetaForPage(pageKey?: string, override: SeoOverrides = {}) {
-  const route = useRoute()
-  const { t } = useI18n({ useScope: 'global' })
+export async function updateSeoMetaWithLocale({locale}: {locale: string}) {
+  await useNuxtApp().$i18n.loadLocaleMessages(locale as 'zh' | 'en')
+  await nextTick()
+  useSeoMetaForPage()
+}
+
+export function useSeoMetaForPage({pageKey, override}: {pageKey?: string, override?: SeoOverrides} = {}) {
   const head = useLocaleHead()
 
-  const key = pageKey ?? route.name?.toString().split('-')[0] ?? 'index'
+  const key = pageKey ?? route.name?.toString().split('-')[0].split('__')[0] ?? 'index'
 
-  const displayName = t('meta.global.displayName')
-  const suffix = t('meta.global.suffix')
+  const displayName = useNuxtApp().$i18n.t('meta.global.displayName')
+  const suffix = useNuxtApp().$i18n.t('meta.global.suffix')
 
-  const pageTitle = override.title ?? t(`meta.page.${key}.title`)
-  const description = override.description ?? t(`meta.page.${key}.description`)
-  const ogTitle = override.ogTitle ?? t(`meta.page.${key}.ogTitle`, t('meta.global.ogTitle'))
-  const ogDescription = override.ogDescription ?? t(`meta.page.${key}.ogDescription`, t('meta.global.ogDescription'))
-  const ogImage = override.ogImage ?? t('meta.global.ogImage')
+  const pageTitle = override?.title ?? useNuxtApp().$i18n.t(`meta.page.${key}.title`)
+  const description = override?.description ?? useNuxtApp().$i18n.t(`meta.page.${key}.description`)
+  const ogTitle = override?.ogTitle ?? useNuxtApp().$i18n.t(`meta.page.${key}.ogTitle`, useNuxtApp().$i18n.t('meta.global.ogTitle'))
+  const ogDescription = override?.ogDescription ?? useNuxtApp().$i18n.t(`meta.page.${key}.ogDescription`, useNuxtApp().$i18n.t('meta.global.ogDescription'))
+  const ogImage = override?.ogImage ?? useNuxtApp().$i18n.t('meta.global.ogImage')
 
   useHead({
     htmlAttrs: head.value.htmlAttrs,

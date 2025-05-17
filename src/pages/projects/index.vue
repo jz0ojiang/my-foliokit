@@ -18,7 +18,7 @@ import { getProjects } from '~/utils/getProjects';
 const { locale: lang, t } = useI18n({ useScope: 'local' });
 const projectsData = await getProjects(lang.value, 0, -1)
 
-useSeoMetaForPage('projects')
+useSeoMetaForPage({pageKey: 'projects'})
 </script>
 
 <style lang="postcss" scoped>

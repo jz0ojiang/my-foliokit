@@ -141,7 +141,7 @@ const { data: projectData } = await useAsyncData<ProjectsCollectionItem | null>(
   }
 )
 
-useSeoMetaForPage('projects', {title: projectData.value?.title})
+useSeoMetaForPage({pageKey: 'projects', override: {title: projectData.value?.title}})
 
 </script>
 

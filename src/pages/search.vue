@@ -54,9 +54,7 @@ const results = ref<ProjectsCollectionItem[]>([])
 const searchQuery = computed(() => route.query.q as string)
 
 
-useSeoMetaForPage('search', {
-  title: t('search.results_for', { query: searchQuery.value }),
-})
+useSeoMetaForPage({pageKey: 'search', override: {title: t('search.results_for', { query: searchQuery.value })}})
 // 格式化日期
 function formatDate(date: string | Date): string {
   if (typeof date === 'string') {

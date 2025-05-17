@@ -51,7 +51,7 @@ const { t, locale } = useI18n({
   useScope: 'local'
 })
 
-useSeoMetaForPage('index')
+useSeoMetaForPage({pageKey: 'index'})
 
 const loadMoreText = computed(() => {
   return start.value > 11 ? t('jumpToProjects') : t('loadMore')
