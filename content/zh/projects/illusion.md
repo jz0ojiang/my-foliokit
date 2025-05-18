@@ -3,7 +3,7 @@ title: illusion
 date: 2022-09-14
 description: 在 Minecraft 设计实现非对称竞技游戏
 endDate: present
-cover: https://image.im0o.top/2024/202504282218906.png
+cover: https://image.im0o.top/2025/202505181013717.webp
 tags:
   - illusion#F49D37
   - Minecraft#7FB069
