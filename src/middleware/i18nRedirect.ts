@@ -9,6 +9,14 @@ const getLangFromPath = (path: string): LangCode => {
   return (match && (match[1] === 'zh' || match[1] === 'en')) ? match[1] as LangCode : 'zh'
 }
 
+// 获取系统语言
+const getSystemLanguage = (): LangCode => {
+  if (typeof window === 'undefined') return 'zh'
+  
+  const systemLang = navigator.language.toLowerCase()
+  return systemLang.startsWith('zh') ? 'zh' : 'en'
+}
+
 export default defineNuxtRouteMiddleware((to) => {
   const { locale } = useI18n()
   const { lang, defaultLocale, setLang, userChangeLang } = useLangStore()
@@ -35,8 +43,18 @@ export default defineNuxtRouteMiddleware((to) => {
       }
     }
   } else {
-    // 用户未手动切换语言：使用 URL 中的语言
-    locale.value = urlLang
-    setLang(urlLang, false)
+    // 用户未手动切换语言：优先使用 URL 中的语言，如果没有则使用系统语言
+    const preferredLang = urlLang !== defaultLocale ? urlLang : getSystemLanguage()
+    locale.value = preferredLang
+    setLang(preferredLang, false)
+    
+    // 如果系统语言与 URL 不匹配，重定向到正确的语言路径
+    if (preferredLang !== urlLang) {
+      if (preferredLang === defaultLocale) {
+        return navigateTo(to.path.replace(`/${urlLang}`, ''))
+      } else {
+        return navigateTo(`/${preferredLang}${to.path}`)
+      }
+    }
   }
 })
