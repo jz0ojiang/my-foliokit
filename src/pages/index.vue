@@ -35,7 +35,7 @@
 import { useLocalePath } from '#i18n'
 import { useI18n } from 'vue-i18n'
 import MainContainer from '@/components/MainContainer.vue'
-import { getProjects } from '@/utils/getProjects'
+import { getProjects, getProjectsCount } from '@/utils/getProjects'
 import { ref, computed, onMounted } from 'vue'
 import type { Project } from '@/types/project'
 import { useSeoMetaForPage } from '~/components/useSeoMetaForPage';
@@ -51,6 +51,8 @@ const { t, locale } = useI18n({
   useScope: 'local'
 })
 
+const projectsCount = ref(0)
+
 useSeoMetaForPage({pageKey: 'index'})
 
 const loadMoreText = computed(() => {
@@ -65,18 +67,19 @@ const loadMore = async () => {
   prevCount.value = projects.value.length
   isLoadingMore.value = true
   const newProjects = await getProjects(locale.value, start.value, 6)
-  if (newProjects.length >= (projects.value.length - start.value)) {
+  projects.value = [...projects.value, ...newProjects]
+  if (projects.value.length >= projectsCount.value) {
     showMore.value = false
   }
-  projects.value = [...projects.value, ...newProjects]
-  if (newProjects.length > 5) {
-    start.value += 6
+  if (newProjects.length > 0) {
+    start.value += newProjects.length
   }
   isLoadingMore.value = false
 }
 
 onMounted(async () => {
   const initialProjects = await getProjects(locale.value, 0, 6)
+  projectsCount.value = await getProjectsCount(locale.value)
   if (initialProjects.length > 0) {
     projects.value = initialProjects
     if (initialProjects.length > 5) {

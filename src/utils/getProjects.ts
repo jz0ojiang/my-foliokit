@@ -10,6 +10,15 @@ const formatDate = (date: string | undefined) => {
   return undefined
 }
 
+export const getProjectsCount = async (lang: string) => {
+  const { data: projectsData } = await useAsyncData(() => {
+    return queryCollection('projects').all()
+  })
+  const regex = new RegExp(`\\/${lang}\\/projects\\/`)
+  const filteredProjects = projectsData.value?.filter((project) => regex.test(project.id))
+  return filteredProjects?.length || 0
+}
+
 // get projects
 export const getProjects = async (lang: string, start: number = 0, limit: number = 6): Promise<Project[]> => {
   let projects: ProjectsCollectionItem[] = []
