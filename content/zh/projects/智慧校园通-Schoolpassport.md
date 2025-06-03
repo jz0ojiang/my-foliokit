@@ -16,7 +16,7 @@ top: false # optional ; 可选项
 draft: false # optional ; 可选项
 weight: 5 # optional ; 可选项
 no_ai: false # optional ; 可选项
-abbrlink: 095fde3e
+abbrlink: 3f4a6b2c
 ---
 
 <!-- 项目正文内容，可支持 Markdown 格式 / Project content below, supports Markdown format -->
