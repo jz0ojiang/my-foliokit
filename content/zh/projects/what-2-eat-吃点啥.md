@@ -10,7 +10,7 @@ tags:
   - Vite
   - 重构实践#4A90E2
 link: https://github.com/akinodev/whattoeat
-weight: 5
+weight: 4
 abbrlink: 309cbe5c
 ---
 

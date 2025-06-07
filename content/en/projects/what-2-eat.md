@@ -10,7 +10,7 @@ tags:
   - Vite
   - Refactoring Practice#4A90E2
 link: https://github.com/akinodev/whattoeat
-weight: 5
+weight: 4
 abbrlink: 41adcf6d
 ---
 

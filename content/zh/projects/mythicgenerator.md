@@ -12,6 +12,7 @@ tags:
   - Minecraft#7FB069
 link: https://github.com/jz0ojiang/mythicgenerator
 abbrlink: f1fdbd09
+weight: 4
 ---
 
 
